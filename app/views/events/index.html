@@ -1,0 +1,42 @@
+---
+  template: page
+---
+
+  <div class="container margin-t">
+
+    <div class="col-md-4">
+      <div class="panel panel-default bg-white fixed-panel">
+        <div class="panel-body">
+          <a href="events/new" class="btn-large btn background-match btn-lg-square">
+            <h1 class="glyphicon glyphicon-plus-sign" style="color: #FFF"></h1>
+        </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4" data-scope="event">
+      <div class="panel panel-default bg-white fixed-panel">
+        <div class="panel-heading">
+          <span class="pull-right">
+            <form data-prop="destroy_event">
+                <button type="submit" class="btn-xs btn btn-danger pull-right">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+            </form>
+          </span>
+          <strong data-prop="name">Event Name</strong>
+        </div>
+        <div class="panel-body">
+          <p data-prop="description">
+            Event Description goes here.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div data-scope="event" data-version="empty">
+      <p>
+        No Events Yet
+      </p>
+    </div>
+  </div>

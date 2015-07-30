@@ -2,7 +2,14 @@
   template: page
 ---
 
-<form data-scope="event">
-  <input type="name" placeholder="Event Name">
-  <input type="submit">
-</form>
+<div class="form-container">
+  <div class="form-container-inner">
+    <form data-scope="event">
+      <div class="form-group">
+        <input class="form-control add-margin-bottom" data-prop="name" type="text" placeholder="Event Name">
+        <textarea class="form-control add-margin-bottom" rows="8" cols="40" data-prop="description" placeholder="Event Description"></textarea>
+        <input class="btn btn-default" type="submit">
+      </div>
+    </form>
+  </div>
+</div>

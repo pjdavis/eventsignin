@@ -15,7 +15,31 @@
             border-radius: 8px;
 }
 
+.btn-lg-square {
+    padding: 25px 35px;
+    font-size: 30px; //change this to your desired size
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
 
 .add-margin-bottom {
   margin-bottom: 40px;
 }
+
+.bg-white {
+  background-color: #EEEEEE;
+  color: #EA3A3A;
+}
+.col {
+  margin-right:7px;
+  margin-left:7px;
+}
+
+.fixed-panel {
+       min-height: 150px;
+       max-height: 150px;
+       overflow-y: scroll;
+ }

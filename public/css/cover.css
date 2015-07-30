@@ -132,3 +132,17 @@ body {
     margin-right: auto;
     margin-left: auto;
 }
+
+.form-container-inner {
+  width: 400px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.form-container-inner {
+  width: 400px;
+}
+
+.background-match {
+  background-color: #EA3A3A;
+}

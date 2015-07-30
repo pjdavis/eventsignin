@@ -1,3 +1,15 @@
 Pakyow::App.bindings do
-  # define bindings here
+  scope :event do
+    restful :event
+
+    binding :destroy_event do
+        {
+            action: router.group(:event).path(:remove, event_id: bindable.id),
+            method: 'post',
+            view: lambda { |view|
+                view.prepend(Pakyow::Presenter::View.new('<input type="hidden" name="_method" value="delete">'))
+            }
+        }
+    end
+  end
 end

@@ -6,14 +6,28 @@ Pakyow::App.routes do
   #   puts 'hello'
   # end
 
-  restful :event, '/events/' do
+  restful :event, '/events' do
     list do
-      Pakyow.logger.write Event.all
-      view.scope(:event).apply(Event.all)
+      view.scope(:event).apply(Event.order(Sequel.desc(:created_at)).all)
     end
 
     new do
-      @event = Event.new
+      view.scope(:event).bind(Event.new)
+    end
+
+    create do
+      Pakyow.logger.write "params: #{params}"
+      @event = Event.new(params[:event])
+      if @event.valid?
+        @event.save
+        redirect router.group(:event).path(:list)
+      end
+    end
+
+    remove do
+      Pakyow.logger.write "params: #{params}"
+      Event.destroy(params[:event])
+      redirect router.group(:event).path(:list)
     end
   end
 end
