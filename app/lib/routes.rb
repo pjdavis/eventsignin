@@ -26,7 +26,7 @@ Pakyow::App.routes do
 
     remove do
       Pakyow.logger.write "params: #{params}"
-      Event.destroy(params[:event])
+      Event.find(params[:event_id]).delete
       redirect router.group(:event).path(:list)
     end
   end
